@@ -4,6 +4,7 @@ import Product from './Product'
 
 function ProductsList(props) {
     const {products} = props;  
+    console.log(products);
     return (
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-3' >
             {
@@ -11,9 +12,9 @@ function ProductsList(props) {
                     (product) => (
                         <Product
                             key = {product.id}
-                            title = {product.author}
-                            image_url = {product.download_url}
-                            price = {product.width}
+                            title = {product.title}
+                            image_url = {product.image}
+                            price = {product.price}
                             cartadd = {props.Cartadd}
                         />
                     ) 
