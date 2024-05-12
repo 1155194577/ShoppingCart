@@ -1,6 +1,5 @@
 import Carditem from "./Cartitem"
 function Cart(props){
-   const [title,price,url] = props.Arr;
     return (
 
         <div className='flex flex-col w-full'>

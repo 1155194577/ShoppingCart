@@ -10,7 +10,7 @@ function Product(props) {
         <h1 className="wrapping">{props.title}</h1>  
         <p>HKD : {props.price} </p>  
         <div className="rounded-lg">
-        <button onClick={()=>props.cartadd(props.title,props.price,props.image_url)} className="bg-amber-300 w-16 h-12 rounded-full border-2 border-black text-xs">Add to cart</button>
+        <button onClick={()=>props.cartadd(props)} className="bg-amber-300 w-16 h-12 rounded-full border-2 border-black text-xs">Add to cart</button>
         </div>
         </div>
     )

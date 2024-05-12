@@ -23,10 +23,9 @@ function App() {
   const GotoShoppingCart = () => {SetShoppingCart(false)};  
   const GotoHomePage = () => {SetShoppingCart(true)};  
   const [OrderingArr,SetOrderingArr] = useState([]);
-  const AddToCart = (title,price,url) => { 
-    console.log(OrderingArr);
-    const pushing = [title,price,url]; 
-    SetOrderingArr([...OrderingArr,pushing]);
+  const AddToCart = (props) => { 
+    console.log(props);
+    SetOrderingArr([...OrderingArr,props]);
   }
   return (
     <div className="bg-gray-400">
