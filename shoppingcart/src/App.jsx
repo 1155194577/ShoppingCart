@@ -22,13 +22,18 @@ function App() {
   const [IsShopping,SetShoppingCart] = useState([]);
   const GotoShoppingCart = () => {SetShoppingCart(false)};  
   const GotoHomePage = () => {SetShoppingCart(true)};  
-
+  const [OrderingArr,SetOrderingArr] = useState([]);
+  const AddToCart = (title,price,url) => { 
+    console.log(OrderingArr);
+    const pushing = [title,price,url]; 
+    SetOrderingArr([...OrderingArr,pushing]);
+  }
   return (
     <div className="bg-gray-400">
     <div><Header shoppingcart={GotoShoppingCart} home={GotoHomePage}/></div>
 
     <div className="w-3/4 h-full"> 
-    {IsShopping ? <ProductsList products={datajson}/> : <Cart/>}
+    {IsShopping ? <ProductsList products={datajson} Cartadd={AddToCart}/> : <Cart Arr={OrderingArr}/>}
     </div>
 
     </div>
