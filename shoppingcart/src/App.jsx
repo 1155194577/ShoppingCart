@@ -5,7 +5,7 @@ import Product from './components/Product'
 import Cart from './components/Cart'
 function App() {
 
-  const url = "https://picsum.photos/v2/list";
+  const url = 'https://fakestoreapi.com/products';
   const [datajson, setData] = useState([]);
 
   const fetchInfo = () => {
@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     fetchInfo();
   }, []);
-
+  console.log("he",datajson);
   const [IsShopping,SetShoppingCart] = useState([]);
   const GotoShoppingCart = () => {SetShoppingCart(false)};  
   const GotoHomePage = () => {SetShoppingCart(true)};  

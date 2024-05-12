@@ -4,7 +4,7 @@ import Product from './Product'
 
 function ProductsList(props) {
     const {products} = props;  
-    console.log(products);
+    console.log("Prolist",typeof(props.products));
     return (
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-3' >
             {

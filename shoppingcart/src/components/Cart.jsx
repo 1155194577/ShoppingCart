@@ -1,8 +1,21 @@
 import Carditem from "./Cartitem"
 function Cart(props){
+    const {Arr} = props;
     return (
 
-        <div className='flex flex-col w-full'>
+        <div className='flex flex-col w-full'> 
+             {
+                Arr.map(
+                    (item) => (
+                        <Carditem
+                            key = {item.key}
+                           title = {item.title}
+                           price = {item.price} 
+                        />
+                    ) 
+
+                )
+      }
     </div>
     )
 }
