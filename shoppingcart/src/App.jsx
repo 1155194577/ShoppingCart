@@ -1,4 +1,4 @@
-import { useState,useEffect} from 'react'
+import {useState,useEffect} from 'react'
 import Header from './components/Header'
 import ProductsList from './components/ProductsList'
 import Product from './components/Product'
@@ -22,18 +22,28 @@ function App() {
   const GotoShoppingCart = () => {SetShoppingCart(false)};  
   const GotoHomePage = () => {SetShoppingCart(true)};  
   const [OrderingArr,SetOrderingArr] = useState([]);
+  const [numberMap,SetnumberArr] = useState({}); //this arr keep track of number of items ordered
+  
+  const updateArr = (title) => {
+    const preObj = {...numberMap};
+    preObj[title] = 1;
+    SetnumberArr(preObj); 
+  }
 
   const AddToCart = (props) => { 
-    const pushtitle = props["title"];
+    const pushtitle = props.title;
     const titles = OrderingArr.map(item=>item.title);
     if (!titles.includes(pushtitle)) {
+    updateArr(pushtitle);
     SetOrderingArr([...OrderingArr,props])}
     else{
+      console.log(numberMap);
       alert("already in cart!");
     }
   }
 
   const DeleteFromCart = (title) => {
+      console.log(numberMap);
       const newArr = OrderingArr.filter(item => item.title!==title); 
       console.log("deleted arr :",newArr); 
        SetOrderingArr(newArr);
@@ -44,7 +54,7 @@ function App() {
     <div><Header shoppingcart={GotoShoppingCart} home={GotoHomePage}/></div>
 
     <div className="w-3/4 h-full"> 
-    {IsShopping ? <ProductsList products={datajson} Cartadd={AddToCart}/> : <Cart Arr={OrderingArr} Cartdel={DeleteFromCart}/>}
+    {IsShopping ? <ProductsList products={datajson} Cartadd={AddToCart}/> : <Cart Arr={OrderingArr} NumMap={numberMap}  Cartdel={DeleteFromCart}/>}
     </div>
 
     </div>
