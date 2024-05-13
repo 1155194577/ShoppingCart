@@ -1,7 +1,20 @@
 import Carditem from "./Cartitem"
 
 
+
 function Cart(props){
+    
+    const sum = (arr) =>  {
+        const map = props.NumMap; 
+        console.log(arr.map((item)=>(map[item.title])));
+        console.log(arr.map((item)=>(item.price))); 
+        const sumArr = arr.map((item)=>(map[item.title]*item.price)); 
+        console.log(sumArr);
+        const addall = sumArr.reduce((acc,curr)=>acc+curr,0);
+        console.log(addall);
+        return addall; 
+    }
+
     const {Arr} = props;
     console.log("Items added to shopping cart :", Arr); 
     return (
@@ -24,7 +37,7 @@ function Cart(props){
 
                 )
       }
-      <div className="bottom-0 absolute right-2 w-24 h-24 text-xl bg-cyan-300">Total</div>
+      <div className="bottom-0 absolute right-2 w-24 h-24 text-xl bg-cyan-300">Total {sum(Arr)}</div>
     </div>
     </div>
     )

@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 function Cartitem(props) {
     const mapping = props.NumMap; 
     const orderedval = mapping[props.title];
@@ -17,7 +16,7 @@ function Cartitem(props) {
     return (
         <div className="flex flex-row justify-between content-center w-full space-y-2 bg-yellow-200">
         
-            <p>{`${props.title} HKD : ${props.price*orderedval}`}</p>
+            <p>{`${props.title} HKD : ${props.price}/one`}</p>
             <div className="flex flex-row">
             <button onClick={()=>minus()}>-</button>
             <p>{mapping[props.title]}</p>
