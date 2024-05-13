@@ -5,7 +5,7 @@ function Cartitem(props) {
     return (
         <div className="flex flex-row justify-between content-center w-full space-y-2 bg-yellow-200">
         
-            <p>{props.title}</p>
+            <p>{`${props.title} HKD : ${props.price}`}</p>
             <div className="flex flex-row">
             <button onClick={()=>setval(orderedval-1)}>-</button>
             <p>{orderedval}</p>
