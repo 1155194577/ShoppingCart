@@ -1,4 +1,6 @@
 import Carditem from "./Cartitem"
+
+
 function Cart(props){
     const {Arr} = props;
     console.log("Items added to shopping cart :", Arr); 
@@ -13,6 +15,7 @@ function Cart(props){
                            title = {item.title}
                            price = {item.price} 
                            numbers ={item.numbers}
+                           Cartdel = {props.Cartdel}
                         />
                     ) 
 
