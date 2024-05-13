@@ -8,7 +8,7 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 # reference
-
+inspired by : https://www.theodinproject.com/lessons/node-path-react-new-shopping-cart
 https://www.freecodecamp.org/news/how-to-build-a-shopping-cart-with-react-and-typescript/
 
 ## Reactjs components
