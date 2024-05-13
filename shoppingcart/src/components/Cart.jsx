@@ -1,6 +1,7 @@
 import Carditem from "./Cartitem"
 function Cart(props){
     const {Arr} = props;
+    console.log("Items added to shopping cart :", Arr); 
     return (
 
         <div className='flex flex-col w-full'> 
@@ -11,6 +12,7 @@ function Cart(props){
                             key = {item.key}
                            title = {item.title}
                            price = {item.price} 
+                           numbers ={item.numbers}
                         />
                     ) 
 

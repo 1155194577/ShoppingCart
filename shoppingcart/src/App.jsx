@@ -18,14 +18,19 @@ function App() {
   useEffect(() => {
     fetchInfo();
   }, []);
-  console.log("he",datajson);
   const [IsShopping,SetShoppingCart] = useState([]);
   const GotoShoppingCart = () => {SetShoppingCart(false)};  
   const GotoHomePage = () => {SetShoppingCart(true)};  
   const [OrderingArr,SetOrderingArr] = useState([]);
   const AddToCart = (props) => { 
-    console.log(props);
-    SetOrderingArr([...OrderingArr,props]);
+    const pushtitle = props["title"];
+    const titles = OrderingArr.map(item=>item.title);
+    console.log(pushtitle,titles);
+    if (!titles.includes(pushtitle)) {
+    SetOrderingArr([...OrderingArr,props])}
+    else{
+      alert("already in cart!");
+    }
   }
   return (
     <div className="bg-gray-400">
