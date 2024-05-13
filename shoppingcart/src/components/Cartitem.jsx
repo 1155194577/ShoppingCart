@@ -2,10 +2,10 @@ import { useState } from "react";
 
 function Cartitem(props) {
     const mapping = props.NumMap; 
-    const [orderedval,setval] = useState(1); 
+    const orderedval = mapping[props.title];
     function minus() {
         if(orderedval>1)
-        setval(orderedval-1); 
+         props.Decrement(props.title);  
         else {
             let result = confirm("delete this item from the cart?"); 
             if(result) {
@@ -21,7 +21,7 @@ function Cartitem(props) {
             <div className="flex flex-row">
             <button onClick={()=>minus()}>-</button>
             <p>{mapping[props.title]}</p>
-            <button onClick={()=>setval(orderedval+1)}>+</button>
+            <button onClick={()=> props.Increment(props.title)}>+</button>
             
             </div>
            

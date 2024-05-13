@@ -26,9 +26,25 @@ function App() {
   
   const updateArr = (title) => {
     const preObj = {...numberMap};
-    preObj[title] = 1;
+      console.log("The mapping is : ",preObj)
+      preObj[title] = 1;
     SetnumberArr(preObj); 
   }
+  const Increment = (title) =>  {
+    const preObj = {...numberMap};
+      preObj[title] +=  1;
+     SetnumberArr(preObj); 
+      console.log("The mapping iss : ",preObj)
+  }
+  const Decrement = (title) =>  {
+    const preObj = {...numberMap};
+      preObj[title] -=  1;
+     SetnumberArr(preObj); 
+      console.log("The mapping iss : ",preObj)
+  }
+
+
+
 
   const AddToCart = (props) => { 
     const pushtitle = props.title;
@@ -54,7 +70,7 @@ function App() {
     <div><Header shoppingcart={GotoShoppingCart} home={GotoHomePage}/></div>
 
     <div className="w-3/4 h-full"> 
-    {IsShopping ? <ProductsList products={datajson} Cartadd={AddToCart}/> : <Cart Arr={OrderingArr} NumMap={numberMap}  Cartdel={DeleteFromCart}/>}
+    {IsShopping ? <ProductsList products={datajson} Cartadd={AddToCart}/> : <Cart Arr={OrderingArr} NumMap={numberMap}  Cartdel={DeleteFromCart} Inc={Increment} Dec={Decrement}/>}
     </div>
 
     </div>

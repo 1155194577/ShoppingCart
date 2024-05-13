@@ -17,6 +17,8 @@ function Cart(props){
                            numbers ={item.numbers}
                            Cartdel = {props.Cartdel}
                             NumMap    =  {props.NumMap}
+                              Increment   =   {props.Inc}
+                              Decrement  = {props.Dec}
                         />
                     ) 
 
